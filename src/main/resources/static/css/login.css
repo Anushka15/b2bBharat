@@ -1,5 +1,5 @@
 body {
-    background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+    background: #242424 url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
     color: #000;
     font: 14px Arial;
     margin: 0 auto;
@@ -165,9 +165,9 @@ form:after {
 #description { background-position: 10px 10px !important }
 #website { background-position: 10px -53px !important }
 #content form input[type="submit"] {
-    background: rgb(254,231,154);
-    background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
-    background: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
+    background: rgb(254, 50, 27);
+    background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgb(252, 254, 254) 100%);
+    background: -webkit-linear-gradient(top, rgb(20, 255, 133) 0%, rgb(20, 212, 106) 100%);
     background: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
     background: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
     background: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
@@ -232,7 +232,7 @@ form:after {
 }
 .button a {
     background: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
-    color: #7E7E7E;
+    color: #e62724;
     font-size: 17px;
     padding: 2px 0 2px 40px;
     text-decoration: none;
