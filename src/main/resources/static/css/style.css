@@ -533,7 +533,8 @@ section {
   text-align: center;
   font-weight: 700;
   position: relative;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .section-header h3::before {
@@ -714,7 +715,6 @@ section {
   position: absolute;
   background-color: #18d26e;
   border-radius: 50%;
-  text-align: center;
   border: 4px solid #fff;
   left: calc( 50% - 32px);
   bottom: -30px;
@@ -924,7 +924,7 @@ section {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 #portfolio #portfolio-flters {
@@ -959,12 +959,12 @@ section {
 }
 
 #portfolio .portfolio-wrap {
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
 #portfolio .portfolio-wrap:hover {
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
 }
 
 #portfolio .portfolio-item {
@@ -1070,7 +1070,7 @@ section {
 /* Portfolio Details
 --------------------------------*/
 .portfolio-details {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .portfolio-details .portfolio-details-container {
@@ -1101,7 +1101,7 @@ section {
 }
 
 .portfolio-details .portfolio-info {
-  padding: 30px;
+  padding: 10px;
   position: absolute;
   right: 0;
   bottom: -70px;
