@@ -1363,7 +1363,7 @@ section {
 /* Contact Section
 --------------------------------*/
 #contact {
-  padding: 60px 0;
+  padding: 0 0;
 }
 
 #contact .contact-info {
@@ -1378,7 +1378,7 @@ section {
   color: #18d26e;
 }
 
-#contact .contact-info address, #contact .contact-info p {
+#contact .contact-info address, #contact .contact-info p, #contact .contact-info p {
   margin-bottom: 0;
   color: #000;
 }
@@ -1399,19 +1399,19 @@ section {
   color: #18d26e;
 }
 
-#contact .contact-address, #contact .contact-phone, #contact .contact-email {
+#contact .contact-address, #contact .contact-phone, #contact .contact-email, #contact .contact-team {
   margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
-  #contact .contact-address, #contact .contact-phone, #contact .contact-email {
-    padding: 20px 0;
+  #contact .contact-address, #contact .contact-phone, #contact .contact-email, #contact .contact-team {
+    padding: 0 0;
   }
 }
 
 @media (min-width: 768px) {
-  #contact .contact-phone {
-    border-left: 1px solid #ddd;
+  #contact .contact-address, #contact .contact-phone, #contact .contact-email {
+    /*border-left: 1px solid #ddd;*/
     border-right: 1px solid #ddd;
   }
 }
