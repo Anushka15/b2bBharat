@@ -23,7 +23,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId")
-    private Integer id;
+    private Integer userId;
 
     @Column(name = "email")
     @Email(message = "*Please provide a valid Email")
