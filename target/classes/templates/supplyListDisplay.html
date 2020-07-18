@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Supply List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "container">
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2 align="center">Your Supply List</h2>
+        <table id="customers">
+            <tr>
+                <th>Product ID</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Related products</th>
+                <th>category</th>
+                <th>Time to produce</th>
+                <th>Quantity</th>
+                <th>Price Range</th>
+                <th>Websites</th>
+                <th>Comments</th>
+                <th>Capabilities</th>
+
+            </tr>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.productId}"></td>
+                <td><img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}"></td>
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.productDescription}"></td>
+                <td th:text="${product.relatedProducts}"></td>
+                <td th:text="${product.category}"></td>
+                <td th:text="${product.timeToProduce}"></td>
+                <td th:text="${product.quantity}"></td>
+                <td th:text="${product.priceRange}"></td>
+                <td th:text="${product.website}"></td>
+                <td th:text="${product.comments}"></td>
+                <td th:text="${product.capabilities}"></td>
+
+            </tr>
+        </table>
+        <div align="center">
+            <button><a href="/home">Home</a></button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
