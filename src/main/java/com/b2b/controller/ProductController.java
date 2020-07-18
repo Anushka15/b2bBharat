@@ -117,6 +117,13 @@ public class ProductController {
         modelAndView.setViewName("/supplyListDisplay");
         return modelAndView;
     }
+
+    @RequestMapping(value="/seeMore", method=RequestMethod.GET)
+    public ModelAndView seeMore() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("seeMore");
+        return model;
+    }
 }
 
 
