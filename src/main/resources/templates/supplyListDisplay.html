@@ -32,7 +32,7 @@
             </tr>
             <tr th:each="product: ${products}">
                 <td th:text="${product.productId}"></td>
-                <td><img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}"></td>
+                <td><img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}" class="img-fluid"></td>
                 <td th:text="${product.productName}"></td>
                 <td th:text="${product.productDescription}"></td>
                 <td th:text="${product.relatedProducts}"></td>

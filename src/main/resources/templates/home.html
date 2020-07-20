@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -160,15 +161,15 @@
                 <div class=" col-lg-12">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-demand">Products in Demand</li>
-                        <li data-filter=".filter-supply">Products in Supply</li>
+                        <li data-filter=".filter-DEMAND">Products in Demand</li>
+                        <li data-filter=".filter-SUPPLY">Products in Supply</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-lg-3 col-md-3 col-sm-4 portfolio-item filter-demand">
+               <!-- <div class="col-lg-3 col-md-3 col-sm-4 portfolio-item filter-demand">
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="/img/portfolio/bags.jpg" class="img-fluid" alt="">
@@ -286,7 +287,24 @@
                             <p>Bamboo Crafts</p>
                         </div>
                     </div>
+                </div>-->
+            <th:block th:each="product, stats : ${products}">
+                <!--"${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}"-->
+                <div th:class=" 'col-lg-3 col-md-3 col-sm-4 portfolio-item filter-'+${product.getType()}">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}" class="img-fluid">
+                            <!--<a href="/img/portfolio/bags.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                            <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>-->
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4 th:text = "${product.getProductName()}"><!--<a href="portfolio-details.html">Tote Bags</a>--></h4>
+                            <p th:text = "${product.getCategory()}"></p>
+                        </div>
+                    </div>
                 </div>
+            </th:block>
 
             </div>
             <div class="col-lg-12 col-md-6" align="center">

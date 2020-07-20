@@ -142,7 +142,36 @@ public class ProductService {
         }, userEmail,"SUPPLY");
     }
 
+    public List<Product> getAllProducts()
+    {
+        return jdbcTemplate.query("SELECT * FROM products", new RowMapper<Product>() {
 
+            public Product mapRow(ResultSet rs,int arg1) throws SQLException{
+
+                Product product = new Product();
+                product.setProductId(rs.getInt("product_id"));
+                product.setProductName(rs.getString("product_name"));
+                product.setCapabilities(rs.getString("capabilities"));
+                product.setCategory(rs.getString("category"));
+                product.setComments(rs.getString("comments"));
+                product.setFileName(rs.getString("file_name"));
+                product.setFileType(rs.getString("file_type"));
+                product.setPriceRange(rs.getString("price_range"));
+                product.setProductDescription(rs.getString("product_description"));
+                product.setQuantity(rs.getString("quantity"));
+                product.setRelatedProducts(rs.getString("related_products"));
+                product.setTimeToProduce(rs.getString("time_to_produce"));
+                product.setWebsite(rs.getString("website"));
+                product.setUserEmail(rs.getString("user_email"));
+                product.setType(rs.getString("type"));
+                byte[] data =rs.getBytes("data");
+                String base64Encoded = Base64.getEncoder().encodeToString(data);
+                product.setBase64Image(base64Encoded);
+                System.out.println("*******************"+"l"+product.getBase64Image());
+                return product;
+            }
+        });
+    }
 
 
 }

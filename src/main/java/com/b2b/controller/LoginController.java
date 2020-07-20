@@ -2,6 +2,8 @@ package com.b2b.controller;
 
 import javax.validation.Valid;
 
+import com.b2b.model.Product;
+import com.b2b.service.ProductService;
 import com.b2b.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -15,16 +17,42 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.b2b.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class LoginController {
 
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ProductService productService;
+
     @RequestMapping(value = {"/","/index"}, method=RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView model = new ModelAndView();
         model.setViewName("index");
+        List<Product> productList = productService.getAllProducts();
+        List<Product> products = new ArrayList<>();
+        int max = 7;
+        int min = 0;
+        int range = max-min +1;
+        if(productList.size()>8)
+        {
+            for(int i=0;i<8;i++)
+            {
+                products.add(productList.get((int)(Math.random()*range)));
+            }
+        }
+        else
+        {
+            for(int i=0;i<productList.size();i++)
+            {
+                products.add(productList.get(i));
+            }
+        }
+        model.addObject("products",products);
         return model;
     }
 
@@ -72,6 +100,26 @@ public class LoginController {
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("name", "Welcome " + user.getName());
         modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
+        List<Product> productList = productService.getAllProducts();
+        List<Product> products = new ArrayList<>();
+        int max = 7;
+        int min = 0;
+        int range = max-min +1;
+        if(productList.size()>8)
+        {
+            for(int i=0;i<8;i++)
+            {
+                products.add(productList.get((int)(Math.random()*range)));
+            }
+        }
+        else
+        {
+            for(int i=0;i<productList.size();i++)
+            {
+                products.add(productList.get(i));
+            }
+        }
+        modelAndView.addObject("products",products);
         modelAndView.setViewName("/home");
         return modelAndView;
     }

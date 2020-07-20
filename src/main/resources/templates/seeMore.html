@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -77,7 +78,7 @@
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-demand">
+                <!--<div class="col-lg-4 col-md-6 portfolio-item filter-demand">
                     <div class="portfolio-wrap">
                         <figure>
                             <img src="/img/portfolio/pots.jpg" class="img-fluid" alt="">
@@ -210,7 +211,25 @@
                             <p>Gift</p>
                         </div>
                     </div>
-                </div>
+                </div>-->
+
+                <th:block th:each="product, stats : ${products}">
+                    <!--"${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}"-->
+                    <div th:class=" 'col-lg-3 col-md-3 col-sm-4 portfolio-item filter-'+${product.getType()}">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}" class="img-fluid">
+                                <!--<a href="/img/portfolio/bags.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>-->
+                            </figure>
+
+                            <div class="portfolio-info">
+                                <h4 th:text = "${product.getProductName()}"><!--<a href="portfolio-details.html">Tote Bags</a>--></h4>
+                                <p th:text = "${product.getCategory()}"></p>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
 
             </div>
 

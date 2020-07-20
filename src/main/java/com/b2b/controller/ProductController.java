@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -121,6 +122,8 @@ public class ProductController {
     @RequestMapping(value="/seeMore", method=RequestMethod.GET)
     public ModelAndView seeMore() {
         ModelAndView model = new ModelAndView();
+        List<Product> products = productService.getAllProducts();
+        model.addObject("products",products);
         model.setViewName("seeMore");
         return model;
     }
