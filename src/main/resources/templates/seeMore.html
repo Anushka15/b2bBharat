@@ -219,8 +219,8 @@
                         <div class="portfolio-wrap">
                             <figure>
                                 <img th:src="${product.base64Image} == null ? _ : @{'data:image/png;base64,'+${product.base64Image}}" class="img-fluid">
-                                <!--<a href="/img/portfolio/bags.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
-                                <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>-->
+                                <a th:href="@{/productDetails(productId=${product.getProductId()})}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                                <!--<a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>-->
                             </figure>
 
                             <div class="portfolio-info">
