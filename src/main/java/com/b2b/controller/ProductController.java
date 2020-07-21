@@ -127,6 +127,18 @@ public class ProductController {
         model.setViewName("seeMore");
         return model;
     }
+
+    @RequestMapping(value="/productDetails",method = RequestMethod.GET)
+    public ModelAndView productDetails(@RequestParam(value="productId") Integer productId){
+        ModelAndView model = new ModelAndView();
+        List<Product> products = productService.getAllProducts();
+        Product product = productService.getProductByProductId(products,productId);
+
+        model.addObject("product",product);
+        model.setViewName("productDetails");
+        return model;
+
+    }
 }
 
 

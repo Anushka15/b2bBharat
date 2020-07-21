@@ -77,6 +77,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/demandListDisplay").permitAll()
                 .antMatchers("/supplyListDisplay").permitAll()
                 .antMatchers("/seeMore").permitAll()
+                .antMatchers("/productDetails").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().csrf().disable()

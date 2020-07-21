@@ -173,5 +173,18 @@ public class ProductService {
         });
     }
 
+    public Product getProductByProductId(List<Product> products,Integer productId)
+    {
+        Product product = new Product();
+        for(int i =0;i<products.size();i++)
+        {
+            Integer id = products.get(i).getProductId();
+            if(id==productId)
+            {
+                return products.get(i);
+            }
+        }
+        return product;
+    }
 
 }
