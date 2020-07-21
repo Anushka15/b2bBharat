@@ -42,7 +42,7 @@ public class LoginController {
         {
             for(int i=0;i<8;i++)
             {
-                products.add(productList.get((int)(Math.random()*range)));
+                products.add(productList.get(i));
             }
         }
         else
@@ -109,7 +109,7 @@ public class LoginController {
         {
             for(int i=0;i<8;i++)
             {
-                products.add(productList.get((int)(Math.random()*range)));
+                products.add(productList.get(i));
             }
         }
         else

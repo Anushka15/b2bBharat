@@ -73,7 +73,7 @@
     </dependencies>
 
     <build>
-        <finalName>login-tutorial</finalName>
+        <finalName>b2bBharat</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
